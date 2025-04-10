@@ -32,11 +32,12 @@ function calcular() {
     kit = Number(document.getElementById("kit").value);
     suplemento = Number(document.getElementById("suplemento").value);
     sangue = Number(document.getElementById("sangue").value);
-
+    equipe = (document.getElementById("equipe").value);
     // calcular a soma parcial
     soma = mascote + homenagem + (2 * leite);
 
     if (equipe == "laranja") {
+        console.log("0")
         if (kit >= 97 && suplemento >= 49) {
             soma += 5000 + ((kit - 97) * 30) + ((suplemento - 49) * 15);
         } else if (kit >= 78 && suplemento >= 39) {
@@ -46,15 +47,17 @@ function calcular() {
         } else if (kit >= 19 && suplemento >= 10) {
             soma += 1000 + ((kit - 19) * 30) + ((suplemento - 10) * 15);
         }
-
+        console.log("1")
         if (sangue >= 49) {
+            console.log("2")
             soma += 2500 + ((sangue - 49) * 20);
         } else {
+            console.log("3")
             soma += sangue * 20;
         }
     }
 
-    if (equipe == "preta") {
+    else if (equipe == "preta") {
         if (kit >= 103 && suplemento >= 52) {
             soma += 5000 + ((kit - 103) * 30) + ((suplemento - 52) * 15);
         } else if (kit >= 82 && suplemento >= 42) {
@@ -72,7 +75,7 @@ function calcular() {
         }
     }
 
-    if (equipe == "roxa") {
+    else if (equipe == "roxa") {
         if (kit >= 102 && suplemento >= 51) {
             soma += 5000 + ((kit - 102) * 30) + ((suplemento - 51) * 15);
         } else if (kit >= 82 && suplemento >= 41) {
@@ -90,7 +93,7 @@ function calcular() {
         }
     }
 
-    if (equipe == "verde") {
+    else if (equipe == "verde") {
         if (kit >= 88 && suplemento >= 44) {
             soma += 5000 + ((kit - 88) * 30) + ((suplemento - 44) * 15);
         } else if (kit >= 70 && suplemento >= 35) {
@@ -108,7 +111,7 @@ function calcular() {
         }
     }
 
-    if (equipe == "vermelha") {
+    else if (equipe == "vermelha") {
         if (kit >= 93 && suplemento >= 47) {
             soma += 5000 + ((kit - 93) * 30) + ((suplemento - 47) * 15);
         } else if (kit >= 74 && suplemento >= 38) {
@@ -125,7 +128,8 @@ function calcular() {
             soma += sangue * 20;
         }
     }
-
+            
+   
     // retorna o valor ao HTML
-    document.getElementById("soma").innerHTML = `A soma é ${soma}`;
+    document.getElementById("soma").innerHTML = `A pontuação da equipe é: ${soma}`;
 }
